@@ -24,7 +24,7 @@ registerLocaleData(zh);
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
-  bootstrap: [AppComponent]
+  providers: [{ provide: NZ_I18N, useValue: zh_CN }], // for service
+  bootstrap: [AppComponent] // entrance
 })
-export class AppModule { }
+export class AppModule { } // root module
