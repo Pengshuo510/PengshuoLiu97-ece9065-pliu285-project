@@ -1,20 +1,33 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule, SkipSelf} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from '../app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ServicesModule} from '../services/services.module';
+import {PagesModule} from '../pages/pages.module';
+import {ShareModule} from '../share/share.module';
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
 
+registerLocaleData(zh);
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ServicesModule,
+    PagesModule,
+    ShareModule,
+    AppRoutingModule,
   ]
 })
-export class CoreModule { } // core module assists root moudle
+export class CoreModule {
+  constructor(@SkipSelf() @optional() parentModule: CoreModule){ // optinal will value parentModule a none when parentModule didn't found
+    if (parentModule){
+      throw new Error('CoreModule can only be imported by appModule');
+    }
+  }
+} // core module assists root moudle
