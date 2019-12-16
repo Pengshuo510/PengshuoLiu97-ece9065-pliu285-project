@@ -5,6 +5,8 @@
         <div class="left">
           <h1>Music</h1>
           <ul nz-menu nzTheme="dark" nzMode="horizontal">
+            <!--<li na-menu-item>Discover</li>
+            <li na-menu-item>Play List</li>-->
             <li nz-menu-item *ngFor="let item of menu" [routerLink]="item.path">{{item.label}}</li>
           </ul>
         </div>
@@ -41,12 +43,11 @@
       <router-outlet></router-outlet>
     </nz-content>
     <nz-footer class="footer">
-      Ant Design ©2019 Implement By Angular
+      Music Review Site©Web Tech
     </nz-footer>
   </nz-layout>
 </div>
 
-<app-wy-player></app-wy-player>
 
 <app-wy-layer-modal>
   <app-wy-layer-default></app-wy-layer-default>
