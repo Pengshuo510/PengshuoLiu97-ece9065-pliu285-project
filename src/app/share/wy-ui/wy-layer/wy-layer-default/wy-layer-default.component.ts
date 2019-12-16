@@ -12,6 +12,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
           <div class="methods">
             <button nz-button nzType="primary" nzSize="large" nzBlock>Login Via Email</button>
             <button nz-button nzType="primary" nzSize="large" nzBlock>Sign Up</button>
+            <button nz-button nzType="primary" nzSize="large" nzBlock>Login Via Third Part</button>
           </div>
         </div>
       </div>
