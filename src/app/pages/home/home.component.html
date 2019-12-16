@@ -1,10 +1,10 @@
 <div class="home">
   <app-wy-carousel #wyCarousel [activeIndex]="carouselActiveIndex" (changeSlide)="onChangeSlide($event)">
     <nz-carousel
-      nzAutoPlay
-      nzEffect="fade"
-      [nzDotRender]="wyCarousel.dotRef"
-      (nzBeforeChange)="onBeforeChange($event)">
+    nzAutoPlay
+    nzEffect="fade"
+    [nzDotRender]="wyCarousel.dotRef"
+    (nzBeforeChange)="onBeforeChange($event)">
       <div class="carousel-item" nz-carousel-content *ngFor="let item of banners">
         <a [href]="item.url" target="_blank" class="banner-item">
           <img [src]="item.imageUrl" />
@@ -12,7 +12,62 @@
       </div>
     </nz-carousel>
   </app-wy-carousel>
-</div>
 
-<div class="right">
-  <app-member-card (openModal)="openModal()"></app-member-card>
+  <div class="main">
+    <div class="wrap">
+      <div class="left">
+        <div class="sec">
+          <div class="up">
+            <div class="navs">
+              <h2>
+                <i></i>
+                <a>Recommendations</a>
+              </h2>
+              <nav>
+                <a *ngFor="let item of hotTags" routerLink="/sheet" [queryParams]="{cat: item.name}">{{item.name}}</a>
+              </nav>
+            </div>
+            <a>
+              More
+              <i nz-icon type="arrow-right" theme="outline"></i>
+            </a>
+          </div>
+
+
+          <div class="down">
+            <div class="down-wrap">
+              <app-single-sheet
+                class="sheet-item"
+                *ngFor="let item of songSheetList"
+                [sheet]="item"
+                (onPlay)="onPlaySheet($event)"
+                (click)="toInfo(item.id)">
+              </app-single-sheet>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="right">
+        <app-member-card (openModal)="openModal()"></app-member-card>
+
+        <div class="settled-singer">
+          <div class="tit"><b>Singers</b></div>
+          <div class="list">
+            <div class="card" *ngFor="let item of singers" [routerLink]="['/singer', item.id]">
+              <div class="pic">
+                <img [src]="item.picUrl" [alt]="item.name">
+              </div>
+              <div class="txt">
+                <b class="ellipsis">{{item.name}}</b>
+                <span>Albums：{{item.albumSize}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

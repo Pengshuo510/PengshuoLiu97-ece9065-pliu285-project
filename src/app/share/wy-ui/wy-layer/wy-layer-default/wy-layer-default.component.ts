@@ -5,14 +5,13 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   template: `
     <div class="cnzt">
       <div class="select-log">
-       <div class="mid-wrap">
-         <!-- <div class="pic">
-           <img src="../../../../../assets/images/platform.png" />
-         </div>-->
+        <div class="mid-wrap">
+          <div class="pic">
+            <img src="../../../../../assets/images/platform.png" />
+          </div>
           <div class="methods">
             <button nz-button nzType="primary" nzSize="large" nzBlock>Login Via Email</button>
             <button nz-button nzType="primary" nzSize="large" nzBlock>Sign Up</button>
-            <button nz-button nzType="primary" nzSize="large" nzBlock>Login Via Third Part</button>
           </div>
         </div>
       </div>

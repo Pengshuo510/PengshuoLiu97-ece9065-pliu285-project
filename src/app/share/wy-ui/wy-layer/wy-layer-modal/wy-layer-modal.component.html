@@ -1,7 +1,7 @@
 <div class="m-layer" *ngIf="showModal">
   <div class="zbar">
-    <div class="zttl f-thide">This Is Titile</div>
+    <div class="zttl f-thide">This Is Title</div>
   </div>
   <ng-content></ng-content>
-  <div class="zcls" title="关闭"></div>
+  <div class="zcls" title="Close" (click)="hide()"></div>
 </div>

@@ -1,17 +1,28 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {WyLayerModule} from './wy-layer/wy-layer.module';
+import { SingleSheetComponent } from './single-sheet/single-sheet.component';
+import { PlayCountPipe } from '../pipes/play-count.pipe';
+import { WyPlayerModule } from './wy-player/wy-player.module';
+import { WySearchModule } from './wy-search/wy-search.module';
+import { WyLayerModule } from './wy-layer/wy-layer.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SingleSheetComponent,
+    PlayCountPipe
+  ],
   imports: [
-    CommonModule,
+    WyPlayerModule,
+    WySearchModule,
     WyLayerModule
   ],
   exports: [
-    WyLayerModule,
+    SingleSheetComponent,
+    PlayCountPipe,
+    WyPlayerModule,
+    WySearchModule,
+    WyLayerModule
   ]
 })
 export class WyUiModule { }

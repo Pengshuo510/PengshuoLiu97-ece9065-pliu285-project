@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { HomeService } from 'src/app/services/home.service';
-import { Banner } from '../../services/data-types/common.types';
+import { Banner, HotTag, SongSheet, Singer } from '../../services/data-types/common.types';
 import { NzCarouselComponent } from 'ng-zorro-antd';
+import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs/internal/operators';
+import { SheetService } from 'src/app/services/sheet.service';
+import { BatchActionsService } from '../../store/batch-actions.service';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +14,25 @@ import { NzCarouselComponent } from 'ng-zorro-antd';
 export class HomeComponent implements OnInit {
   carouselActiveIndex = 0;
   banners: Banner[];
+  hotTags: HotTag[];
+  songSheetList: SongSheet[];
+  singers: Singer[];
 
   @ViewChild(NzCarouselComponent, { static: true }) private nzCarousel: NzCarouselComponent;
 
-  constructor(private homeServe: HomeService) {
-    this.homeServe.getBanners().subscribe(banners => {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private sheetServe: SheetService,
+    private batchActionsServe: BatchActionsService
+  ) {
+    this.route.data.pipe(map(res => res.homeDatas)).subscribe(([banners, hotTags, songSheetList, singers]) => {
       this.banners = banners;
+      this.hotTags = hotTags;
+      this.songSheetList = songSheetList;
+      this.singers = singers;
     });
+    
   }
 
   ngOnInit() {
@@ -31,4 +46,18 @@ export class HomeComponent implements OnInit {
     this.nzCarousel[type]();
   }
 
+
+  onPlaySheet(id: number) {
+    this.sheetServe.playSheet(id).subscribe(list => {
+      this.batchActionsServe.selectPlayList({ list, index: 0});
+    });
+  }
+
+  toInfo(id: number) {
+    this.router.navigate(['/sheetInfo', id]);
+  }
+
+  openModal() {
+    this.batchActionsServe.controlModal();
+  }
 }
