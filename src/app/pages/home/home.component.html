@@ -13,7 +13,7 @@
     </nz-carousel>
   </app-wy-carousel>
 
-  <!--<div class="main">
+  <div class="main">
     <div class="wrap">
       <div class="left">
         <div class="sec">
@@ -21,14 +21,14 @@
             <div class="navs">
               <h2>
                 <i></i>
-                <a>Recommendations</a>
+                <a>热门推荐</a>
               </h2>
               <nav>
                 <a *ngFor="let item of hotTags" routerLink="/sheet" [queryParams]="{cat: item.name}">{{item.name}}</a>
               </nav>
             </div>
             <a>
-              More
+              更多
               <i nz-icon type="arrow-right" theme="outline"></i>
             </a>
           </div>
@@ -51,10 +51,10 @@
 
 
       <div class="right">
-        <app-member-card (openModal)="openModal()"></app-member-card>
+        <app-member-card [user]="user" (openModal)="openModal()"></app-member-card>
 
         <div class="settled-singer">
-          <div class="tit"><b>Singers</b></div>
+          <div class="tit"><b>入驻歌手</b></div>
           <div class="list">
             <div class="card" *ngFor="let item of singers" [routerLink]="['/singer', item.id]">
               <div class="pic">
@@ -62,7 +62,7 @@
               </div>
               <div class="txt">
                 <b class="ellipsis">{{item.name}}</b>
-                <span>Albums：{{item.albumSize}}</span>
+                <span>专辑数：{{item.albumSize}}</span>
               </div>
             </div>
           </div>
@@ -70,4 +70,4 @@
       </div>
     </div>
   </div>
-</div>-->
+</div>
