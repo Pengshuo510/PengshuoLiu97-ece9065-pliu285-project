@@ -1,0 +1,14 @@
+{
+    "development": {
+        "PORT": 8080,
+        "MONGODB_URI": "mongodb+srv://pliu285:pliu285@webproject-iuoca.mongodb.net/test",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "15m"
+    },
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb+srv://pliu285:pliu285@webproject-iuoca.mongodb.net/test",
+        "JWT_SECRET": "SECRET#123",
+        "JWT_EXP": "15m"
+    }
+}
