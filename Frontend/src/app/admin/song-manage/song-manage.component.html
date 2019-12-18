@@ -29,17 +29,12 @@
                                 <td>{{songlist[i].addtime}}</td>
                                 <td>{{songlist[i].status}}</td>
                                 <td>
-                                    <button (click)="changetoNormal(songlist[i])" title="Normal">
-                                        <img src="assets/image/PL-Normal.png" height="25" width="25">
-                                    </button> To Normal
-                                    <br>
-                                    <button (click)="changetoHidden(songlist[i])" title="Hidden">
-                                        <img src="assets/image/PL-Hidden.png" height="25" width="25">
-                                    </button> To Hidden
-                                    <br>
-                                    <button (click)="deletesong(songlist[i])" title="Delete">
-                                        <img src="assets/image/PL-delete.png" height="25" width="25">
-                                    </button> Delete
+                                    <button mat-button (click)="changetoNormal(songlist[i])" title="Normal">To Normal
+                                    </button>
+                                    <button mat-button (click)="changetoHidden(songlist[i])" title="Hidden">To Hidden
+                                    </button>
+                                    <button mat-button (click)="deletesong(songlist[i])" title="Delete">Delete
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>

@@ -8,11 +8,12 @@ var sgTransport = require('nodemailer-sendgrid-transport'); // Import Nodemailer
 // Set authorization for active email
 var options = {
     auth: {
-        api_user: 'zsun323', // Sendgrid username
-        api_key: 'Szk1sc2019!' // Sendgrid password
+      api_key: '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'
     }
 }
 var client = nodemailer.createTransport(sgTransport(options));
+/*const client = require('@sendgrid/mail');
+client.setApiKey(process.env.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);*/
 
 const User = mongoose.model('User');
 
@@ -29,12 +30,13 @@ module.exports.register = (req, res, next) => {
         if (!err) {
             // Set message content
             var email = {
-                from: 'Localhost Staff, activation@tonymusic.ca',
+                from: 'webproject@ece9065.ca',
                 to: user.email,
-                subject: 'Account Activation Email - Tony Music',
-                text: 'Thank you for being TONY MUSIC member!',
-                html: 'Hi, dear ' + user.email + ' :<br><br>Thank you for registering our website. Please click the following link to activate your account :<br><br><a href="http://localhost:8080/api/user/open/activate/' + user.email + '">Please click on me!</a>'
+                subject: 'Account Activation Email',
+                text: 'Thank you for your registration!',
+                html: 'Hi, ' + user.email + ' :<br><br>Thank you for registering our website. Please click the following link to activate your account :<br><br><a href="http://localhost:8080/api/user/open/activate/' + user.email + '">Please click on me!</a>'
             };
+          //client.send(email);
             client.sendMail(email, function(err, info) {
                 if (err) console.log(err);
             });
@@ -85,11 +87,11 @@ module.exports.userProfile = (req, res, next) => {
 // 
 module.exports.resend = (req, res, next) => {
     var email = {
-        from: 'Localhost Staff, activation@tonymusic.ca',
+        from: 'webproject@ece9065.uwo.ca',
         to: req.body.email,
-        subject: 'Account Activation Email - Tony Music',
-        text: 'Thank you for being TONY MUSIC member!',
-        html: 'Hi, dear ' + req.body.email + ' :<br><br>Thank you for registering our website. Please click the following link to activate your account :<br><br><a href="http://localhost:8080/api/user/open/activate/' + req.body.email + '">Please click on me!</a>'
+        subject: 'Account Activation Email',
+        text: 'Thank you for your registration!',
+        html: 'Hi,  ' + req.body.email + ' :<br><br>Thank you for registering our website. Please click the following link to activate your account :<br><br><a href="http://localhost:8080/api/user/open/activate/' + req.body.email + '">Please click on me!</a>'
     };
     client.sendMail(email, function(err, info) {
         if (err) console.log(err);

@@ -1,6 +1,6 @@
 <div align="center">
 
-    <h1> Account List </h1>
+    <h1> User List </h1>
     
     <ul>
         <div class="container">
@@ -16,7 +16,7 @@
                                 <th>Status</th>
                                 <th>Action</th>
                                 <th>Level</th>
-                                <th>Action</th>
+                                <th>Operation</th>
                             </tr>
                         </thead>
     
@@ -27,23 +27,19 @@
                                 <td>{{userlist[i].email}}</td>
                                 <td>{{userlist[i].status}}</td>
                                 <td>
-                                    <button (click)="changetoActivate(userlist[i])" title="Activate">
-                                        <img src="assets/image/US-Normal.png" height="25" width="25">
-                                    </button> Activate
+                                    <button mat-button (click)="changetoActivate(userlist[i])" title="Activate">Activate
+                                    </button>
                                     <br>
-                                    <button (click)="changetoLock(userlist[i])" title="Lock">
-                                        <img src="assets/image/US-Locked.png" height="25" width="25">
-                                    </button> Lock
+                                    <button mat-button (click)="changetoLock(userlist[i])" title="Lock">Lock
+                                    </button>
                                 </td>
                                 <td>{{userlist[i].level}}</td>
                                 <td>
-                                    <button (click)="changetoNormal(userlist[i])" title="Normal">
-                                        <img src="assets/image/US-Lnormal.png" height="25" width="25">
-                                    </button> To normal
+                                    <button mat-button (click)="changetoNormal(userlist[i])" title="Normal">To normal
+                                    </button>
                                     <br>
-                                    <button (click)="changetoAdmin(userlist[i])" title="Admin">
-                                        <img src="assets/image/US-Ladmin.png" height="25" width="25">
-                                    </button> To admin
+                                    <button mat-button (click)="changetoAdmin(userlist[i])" title="Admin">To admin
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>

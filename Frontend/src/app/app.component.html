@@ -1,20 +1,26 @@
 
-<header>
+
+<!--<header>
     <div class="container">
-        <a href="#" class="logo">TONY MUSIC</a>
-        <nav>
-            <ul>
-                <li ><a href="#" routerLink="/admin/user_management" *ngIf="godmode" ><strong>[ Admin Mode ]</strong></a></li>
-                <li><a href="#" routerLink="/">Home</a></li>
-                <li><a href="#" routerLink="/about">About Us</a></li>
-                <li><a href="#" routerLink="/songs/TOP10">Songs</a></li>
-                <li><a href="#" routerLink="/playlist/search_playlist">Playlists</a></li>
-                <li><a href="#" routerLink="/userprofile">User Profile</a></li>
-                <li><a href="#" routerLink="/login">Log In / Out</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+        <a href="#" class="logo">Web Project</a>
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>-->
+
+<mat-sidenav-container>
+  <mat-sidenav-content>
+    <mat-toolbar>
+        <span routerLink="/">Web Project</span>
+               <a mat-button href="#" routerLink="/admin/user_management" *ngIf="godmode" ><strong>[ Admin Mode ]</strong></a>s
+               <a mat-button href="#" routerLink="/login">Login / Sign Up</a>
+               <a mat-button href="#" routerLink="/songs/TOP10">Songs</a>
+               <a mat-button href="#" routerLink="/playlist/search_playlist">Playlists</a>
+               <a mat-button href="#" routerLink="/userprofile">User Profile</a>
+        </mat-toolbar>
+</mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
 
 
 
@@ -22,4 +28,3 @@
     <router-outlet></router-outlet>
 </div>
 
-<h4>ECE9065 Final Project Website<br>Made by Zhaokai Sun, 251094021, zsun323@uwo.ca</h4>

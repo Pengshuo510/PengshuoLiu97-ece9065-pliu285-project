@@ -4,18 +4,21 @@
 <form #addForm="ngForm" (ngSubmit)="addForm.valid && onSubmit(addForm)">
     
     <h1> Song Title </h1>
-    <h1 style="color:rgb(197, 0, 0)"> < {{songname}} > </h1>
+    <h1 style="color:rgb(197, 0, 0)">  {{songname}} </h1>
 
     <h1> Add Rating </h1>
 
-    <select name="rate" #rate="ngModel" [(ngModel)]="songService.selectedSong.rate"
+  <input name="rate" #rate="ngModel" [(ngModel)]="songService.selectedSong.rate"
+         required [ngClass]="{'invalid-textbox' :addForm.submitted && !rate.valid }"placeholder="Please type 1 - 10">
+
+   <!-- <select name="rate" #rate="ngModel" [(ngModel)]="songService.selectedSong.rate"
     required [ngClass]="{'invalid-textbox' :addForm.submitted && !rate.valid }">
         <option value = 1 >1</option>
         <option value = 2 >2</option>
         <option value = 3 >3</option>
         <option value = 4 >4</option>
         <option value = 5> 5</option>
-    </select>
+    </select> -->
 
     <div *ngIf="addForm.submitted && rate.errors">
         <label *ngIf="rate.errors.required" class="validation-message">This info is required</label>

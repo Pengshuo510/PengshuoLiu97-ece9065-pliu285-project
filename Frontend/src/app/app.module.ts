@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+
 // Add Component
 import { AppComponent } from './app.component';
-import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
@@ -39,7 +39,19 @@ import { SongService } from './shared/song.service';
 // Other
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
-import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'ng4-social-login'; // 3rd log in
+import { SocialLoginModule, AuthServiceConfig, GoogleLoginProvider } from 'ng4-social-login';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // 3rd log in
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 
 //3 party
 const config = new AuthServiceConfig([
@@ -57,7 +69,6 @@ export function provideConfig() {
 @NgModule({
   declarations: [    //// declarations start
     AppComponent,
-    AboutComponent,
     HomeComponent,
     UserComponent,
     SignUpComponent,
@@ -80,14 +91,26 @@ export function provideConfig() {
     AddToPlaylistComponent,
     AdminComponent,
     UserManageComponent,
-    SongManageComponent
+    SongManageComponent,
   ],//STOP
   imports: [    //// imports start
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatMenuModule,
+    MatIconModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSnackBarModule
   ],//STOP
   providers: [    //// providers start
     {

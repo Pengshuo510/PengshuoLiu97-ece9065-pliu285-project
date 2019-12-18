@@ -9,8 +9,8 @@ body {
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 }
 
 header {
@@ -25,25 +25,25 @@ header {
     a.logo {
         font-weight: bold;
     }
-    
-    nav {
-        
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            display: flex;
+  nav {
 
-            li a {
-                padding: 1em;
 
-                &:hover {
-                    background: darken($primary, 10%);
-                }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      display: flex;
 
-            }
+      li a {
+        padding: 1em;
+
+        &:hover {
+          background: darken($primary, 10%);
         }
+
+      }
     }
+  }
 }
 
 h1{

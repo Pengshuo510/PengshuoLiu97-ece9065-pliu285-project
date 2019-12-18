@@ -1,11 +1,11 @@
 <header>
     <div class="container" *ngIf="godmode">
-        <nav>
+        <mat-nav-list>
             <ul>
-                <li><a href="#" routerLink="/admin/user_management">User List</a></li>
-                <li><a href="#" routerLink="/admin/song_management">Song List</a></li>
+                <a mat-button href="#" routerLink="/admin/user_management">User List</a>
+                <a mat-button href="#" routerLink="/admin/song_management">Song List</a>
             </ul>
-        </nav>
+        </mat-nav-list>
     </div>
 </header>
 

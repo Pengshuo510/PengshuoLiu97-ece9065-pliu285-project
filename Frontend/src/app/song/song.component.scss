@@ -3,57 +3,57 @@
 $primary: rgb(36, 153, 46);
 
 body {
-    margin: 0;
-    font-family: 'Nunito', 'sans-serif';
-    font-size: 18px;
+  margin: 0;
+  font-family: 'Nunito', 'sans-serif';
+  font-size: 18px;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 50%;
+  margin: 0 auto;
 }
 
 header {
-    background: $primary;
-    padding: 0.1em 0;
-    
-    a {
-        color: white;
-        text-decoration: none;
-    }
+  background: $primary;
+  padding: 0.1em 0;
 
-    a.logo {
-        font-weight: bold;
-    }
-    
-    nav {
-        
+  a {
+    color: white;
+    text-decoration: none;
+  }
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            display: flex;
+  a.logo {
+    font-weight: bold;
+  }
 
-            li a {
-                padding: 1em;
+  nav {
 
-                &:hover {
-                    background: darken($primary, 10%);
-                }
 
-            }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      display: flex;
+
+      li a {
+        padding: 1em;
+
+        &:hover {
+          background: darken($primary, 10%);
         }
+
+      }
     }
+  }
 }
 
 h1{
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 h4{
-    margin-top: 2em;
-    padding: 0.3em 0;
-    color: white;
-    background-color: black;
-    text-align:right;
+  margin-top: 2em;
+  padding: 0.3em 0;
+  color: white;
+  background-color: black;
+  text-align:right;
 }
