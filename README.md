@@ -1,6 +1,6 @@
 ## Getting Started
 
-This is a music review website application based on MEAN stack (MongoDB, Express, Angular and Node.js).
+This is a music review website application based on MEAN stack (MongoDB, Express, Angular and Node.js).<br />
 This webiste is hosted on AWS EC2 and can be accessed [Here](http://3.89.125.155:4200/)
 
 ### Installation
