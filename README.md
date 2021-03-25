@@ -17,7 +17,7 @@ This webiste is hosted on AWS EC2 and can be accessed [Here](http://3.89.125.155
    ```sh
    npm install
    ```
-4. Open a new terminal
+4. Open a new terminal <br />
 5. Switch to Frontend directory
    ```sh
    cd Frontend
