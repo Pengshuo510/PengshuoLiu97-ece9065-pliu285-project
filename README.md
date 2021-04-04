@@ -1,10 +1,10 @@
 ## Getting Started
 
-This is a music review website application based on MEAN stack (MongoDB, Express, Angular and Node.js).<br />
+This is a music review website application based on MEAN stack (MongoDB, Express, Angular and Node.js).<br /><br />
 Here is what you can do: <br />
-Browsing, adding, rating, searching and liking songs <br />
-Browsing, creating, editing, searching and saving reviews <br />
-Creating, sharing and searching playlists <br />
+Browsing, adding, rating, searching and liking songs. <br />
+Browsing, creating, editing, searching and saving reviews. <br />
+Creating, sharing and searching playlists. <br /><br />
 This webiste is hosted on AWS EC2 and can be accessed [Here](http://54.157.225.238:4200/)
 
 ### Installation
